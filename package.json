@@ -1,0 +1,28 @@
+{
+  "name": "emitter20",
+  "version": "0.0.0",
+  "description": "An event emitter in 20 lines of code.",
+  "license": "ISC",
+  "repository": "https://github.com/metaraine/emitter20",
+  "author": {
+    "name": "Raine Lourie",
+    "email": "raineorshine@gmail.com",
+    "url": "https://github.com/metaraine"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "event",
+    "emitter",
+    "tiny"
+  ],
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "dependencies": {}
+}
