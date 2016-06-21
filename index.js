@@ -1,19 +1,19 @@
 module.exports = function() {
   var subscribers = []
   return {
-    on: function (name, f) {
+    on: function (eventName, cb) {
       subscribers.push({
-        name: name,
-        f: f
+        eventName: eventName,
+        cb: cb
       })
     },
-    trigger: function (name, data) {
+    trigger: function (eventName, data) {
       subscribers
         .filter(function (subscriber) {
-          return subscriber.name === name
+          return subscriber.eventName === eventName
         })
         .forEach(function (subscriber) {
-          subscriber.f(data)
+          subscriber.cb(data)
         })
     }
   }
