@@ -1,6 +1,6 @@
 {
   "name": "emitter20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An event emitter in 20 lines of code.",
   "license": "ISC",
   "repository": "https://github.com/metaraine/emitter20",
