@@ -34,5 +34,6 @@ module.exports = function() {
         .forEach(subscriber => subscriber.callback(data))
       return self
     }
+
   }
 }
