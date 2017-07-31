@@ -21,7 +21,7 @@ describe('emitter20', function () {
   
   it('should return itself', function (done) {
     var emitter = new Emitter()
-    emitter.on('later', done).trigger('later')
+    emitter.trigger('test').on('later', done).trigger('later')
   })
 
   it('should remove events', done => {
