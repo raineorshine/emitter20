@@ -1,20 +1,20 @@
 module.exports = function() {
-  var subscribers = []
-  return {
+  var subscribers = [], self
+  return self = {
     on: function (eventName, cb) {
-      subscribers.push({
+      return subscribers.push({
         eventName: eventName,
         cb: cb
-      })
+      }) && self
     },
     trigger: function (eventName, data) {
-      subscribers
+      return subscribers
         .filter(function (subscriber) {
           return subscriber.eventName === eventName
         })
         .forEach(function (subscriber) {
           subscriber.cb(data)
-        })
+        }) && self
     }
   }
 }
