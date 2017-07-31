@@ -14,7 +14,7 @@ module.exports = function() {
         })
         .forEach(function (subscriber) {
           subscriber.cb(data)
-        }) && self
+        }) || self
     }
   }
 }
