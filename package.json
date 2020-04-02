@@ -13,7 +13,8 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "npm run lint && mocha",
+    "lint": "standard"
   },
   "keywords": [
     "event",
@@ -22,7 +23,8 @@
   ],
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "standard": "^14.3.3"
   },
   "dependencies": {}
 }

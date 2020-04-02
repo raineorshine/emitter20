@@ -1,8 +1,7 @@
-module.exports = function() {
+module.exports = function () {
+  let subscribers = []
 
-  let subscribers = [], self
-
-  return self = {
+  const self = {
 
     // remove all subscribers
     clear: (eventName) => {
@@ -36,4 +35,6 @@ module.exports = function() {
     }
 
   }
+
+  return self
 }

@@ -1,9 +1,8 @@
+/* eslint-env mocha */
 const chai = require('chai')
-const should = chai.should()
 const Emitter = require('../index.js')
 
 describe('emitter20', function () {
-
   it('should emit events', done => {
     const emitter = new Emitter()
     emitter.on('karate-chop', done)
@@ -13,7 +12,7 @@ describe('emitter20', function () {
   it('should pass data from trigger to on', done => {
     const emitter = new Emitter()
     emitter.on('welcome', name => {
-      name.should.equal('bob')
+      chai.expect(name).equals('bob')
       done()
     })
     emitter.trigger('welcome', 'bob')
@@ -64,5 +63,4 @@ describe('emitter20', function () {
     emitter.trigger('two')
     done()
   })
-
 })
