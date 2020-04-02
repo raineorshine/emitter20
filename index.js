@@ -1,14 +1,15 @@
 module.exports = function() {
 
-  let subscribers = []
+  let subscribers = [], self
 
-  return {
+  return self = {
 
     // remove all subscribers
     clear: (eventName) => {
       subscribers = eventName != null
         ? subscribers.filter(subscriber => subscriber.eventName !== eventName)
         : []
+      return self // return self to support chaining
     },
 
     // remove a subscriber
@@ -17,11 +18,13 @@ module.exports = function() {
       if (index >= 0) {
         subscribers.splice(index, 1)
       }
+      return self
     },
 
     // subscribe to an event
     on: (eventName, callback) => {
       subscribers.push({ eventName, callback })
+      return self
     },
 
     // trigger an event; all subscribers will be called
@@ -29,6 +32,8 @@ module.exports = function() {
       subscribers
         .filter(subscriber => subscriber.eventName === eventName)
         .forEach(subscriber => subscriber.callback(data))
+      return self
     }
+
   }
 }
