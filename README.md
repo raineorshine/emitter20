@@ -53,4 +53,4 @@ obj.trigger('karate-chop') // Haiaaaaa!'
 
 ## License
 
-ISC © [Raine Lourie](https://github.com/metaraine)
+ISC © [Raine Revere](https://github.com/raineorshine)
