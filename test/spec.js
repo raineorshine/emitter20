@@ -1,31 +1,33 @@
-var chai = require('chai')
-var should = chai.should()
-var Emitter = require('../index.js')
+const chai = require('chai')
+const should = chai.should()
+const Emitter = require('../index.js')
 
 describe('emitter20', function () {
 
   it('should emit events', done => {
-    var emitter = new Emitter()
+    const emitter = new Emitter()
     emitter.on('karate-chop', done)
     emitter.trigger('karate-chop')
   })
 
   it('should pass data from trigger to on', done => {
-    var emitter = new Emitter()
+    const emitter = new Emitter()
     emitter.on('welcome', name => {
       name.should.equal('bob')
       done()
     })
     emitter.trigger('welcome', 'bob')
   })
-  
-  it('should return itself', function (done) {
-    var emitter = new Emitter()
-    emitter.trigger('test').on('later', done).trigger('later')
+
+  it('should return itself', done => {
+    const emitter = new Emitter()
+    emitter
+      .on('later', done)
+      .trigger('later')
   })
 
   it('should remove events', done => {
-    var emitter = new Emitter()
+    const emitter = new Emitter()
     const onWelcome = name => {
       throw new Error('Subscriber should not be triggered after off.')
     }
@@ -36,7 +38,7 @@ describe('emitter20', function () {
   })
 
   it('should clear events with a given eventName', done => {
-    var emitter = new Emitter()
+    const emitter = new Emitter()
     const onOne = name => {
       throw new Error('Subscriber should not be triggered after clear.')
     }
@@ -48,7 +50,7 @@ describe('emitter20', function () {
   })
 
   it('should clear events with a given eventName', done => {
-    var emitter = new Emitter()
+    const emitter = new Emitter()
     const onOne = name => {
       throw new Error('Subscriber should not be triggered after clear.')
     }
