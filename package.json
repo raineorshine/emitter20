@@ -3,14 +3,14 @@
   "version": "1.0.1",
   "description": "An event emitter in 20 lines of code.",
   "license": "ISC",
-  "repository": "https://github.com/metaraine/emitter20",
+  "repository": "https://github.com/raineorshine/emitter20",
   "author": {
-    "name": "Raine Lourie",
-    "email": "raineorshine@gmail.com",
-    "url": "https://github.com/metaraine"
+    "name": "Raine Revere",
+    "email": "raine@cybersemics.org",
+    "url": "https://github.com/raineorshine"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=6"
   },
   "scripts": {
     "test": "mocha"
@@ -21,8 +21,8 @@
     "tiny"
   ],
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
   },
   "dependencies": {}
 }

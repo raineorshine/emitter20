@@ -1,20 +1,34 @@
 module.exports = function() {
-  var subscribers = []
+
+  let subscribers = []
+
   return {
-    on: function (eventName, cb) {
-      subscribers.push({
-        eventName: eventName,
-        cb: cb
-      })
+
+    // remove all subscribers
+    clear: (eventName) => {
+      subscribers = eventName != null
+        ? subscribers.filter(subscriber => subscriber.eventName !== eventName)
+        : []
     },
-    trigger: function (eventName, data) {
+
+    // remove a subscriber
+    off: (eventName, callback) => {
+      const index = subscribers.findIndex(subscriber => subscriber.eventName === eventName && subscriber.callback === callback)
+      if (index >= 0) {
+        subscribers.splice(index, 1)
+      }
+    },
+
+    // subscribe to an event
+    on: (eventName, callback) => {
+      subscribers.push({ eventName, callback })
+    },
+
+    // trigger an event; all subscribers will be called
+    trigger: (eventName, data) => {
       subscribers
-        .filter(function (subscriber) {
-          return subscriber.eventName === eventName
-        })
-        .forEach(function (subscriber) {
-          subscriber.cb(data)
-        })
+        .filter(subscriber => subscriber.eventName === eventName)
+        .forEach(subscriber => subscriber.callback(data))
     }
   }
 }
