@@ -1,8 +1,7 @@
-declare class Emitter {
-  on: (eventName: string, callback: (data?: any) => void) => void;
-  off: (eventName: string, callback: (data?: any) => void) => void;
-  trigger: (eventName: string, data?: any) => void;
-  clear: (eventName?: string) => void;
-}
-
-export = Emitter;
+export default emitter20;
+declare function emitter20(): {
+    clear: (eventName: any) => any;
+    off: (eventName: any, callback: any) => any;
+    on: (eventName: any, callback: any) => any;
+    trigger: (eventName: any, data: any) => any;
+};
