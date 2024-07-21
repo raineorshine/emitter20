@@ -10,10 +10,12 @@
     "url": "https://github.com/raineorshine"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=18"
   },
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "vitest"
   },
   "keywords": [
     "event",
@@ -22,7 +24,7 @@
   ],
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "vitest": "^2.0.3"
   }
 }

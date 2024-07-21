@@ -1,4 +1,4 @@
-module.exports = function () {
+const emitter20 = function () {
   let subscribers = []
 
   const self = {
@@ -36,3 +36,5 @@ module.exports = function () {
 
   return self
 }
+
+export default emitter20
