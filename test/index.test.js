@@ -1,4 +1,4 @@
-import Emitter from '../index.js'
+import Emitter from '../build/index.js'
 import { expect, test } from 'vitest'
 
 test('emit events', async () => {

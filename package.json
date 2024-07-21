@@ -12,7 +12,7 @@
   "engines": {
     "node": ">=18"
   },
-  "exports": "./index.js",
+  "exports": "./build/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc --declaration --allowJs --emitDeclarationOnly index.js",
