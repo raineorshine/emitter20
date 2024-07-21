@@ -22,6 +22,7 @@
   ],
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "prettier": "^3.3.3"
   }
 }

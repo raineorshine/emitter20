@@ -20,9 +20,7 @@ describe('emitter20', function () {
 
   it('should return itself', done => {
     const emitter = new Emitter()
-    emitter
-      .on('later', done)
-      .trigger('later')
+    emitter.on('later', done).trigger('later')
   })
 
   it('should remove events', done => {
